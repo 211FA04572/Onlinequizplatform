@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        /* Reset and Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8; /* Light background color */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2c3e50; /* Match header color */
+            text-align: center; /* Center text */
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #e74c3e; /* Red color */
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #c0392b; /* Darken on hover */
+        }
+
+        .tab-content {
+            display: none; /* Hide all tab contents */
+        }
+
+        .active {
+            display: block; /* Show active tab */
+        }
+
+        /* Button Styling */
+        button.edit-btn {
+            background-color: #2c3e50; /* Dark button color */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            display: block; /* Center button */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button.edit-btn:hover {
+            background-color: #1a242f; /* Darken button on hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50; /* Match header color */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-pic">
+        <h2>Lilly's Profile</h2>
+        <div class="tabs">
+            <div class="tab" onclick="showTab('about')">About</div>
+            <div class="tab" onclick="showTab('skills')">Skills</div>
+            <div class="tab" onclick="showTab('activity')">Activity</div>
+        </div>
+        <div id="about" class="tab-content active">
+            <p>Bio: A passionate quiz enthusiast with a love for learning and sharing knowledge.</p>
+            <p>Email: lilly@example.com</p>
+        </div>
+        <div id="skills" class="tab-content">
+            <p>JavaScript, HTML, CSS, React</p>
+        </div>
+        <div id="activity" class="tab-content">
+            <p>Completed a quiz on General Knowledge</p>
+            <p>Scored 85% in Science Quiz</p>
+            <p>Participated in a JavaScript Workshop</p>
+        </div>
+        <button class="edit-btn">Edit Profile</button>
+    </div>
+    <footer>
+        &copy; 2024 Quiz Platform
+    </footer>
+    <script>
+        function showTab(tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
